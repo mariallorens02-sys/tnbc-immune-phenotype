@@ -1,6 +1,6 @@
 # TNBC Immune Phenotypes
 
-Transcriptomic classification of triple-negative breast cancer (TNBC) into four tumor microenvironment phenotypes using two independent biological axes:
+Transcriptomic classification of triple-negative breast cancer (TNBC) into four tumor microenvironment phenotypes using two biological axes:
 
 - **Immune activity:** Hot vs Cold (Tumor Inflammation Signature, TIS)
 - **Stromal exclusion:** Excluded vs NonExcluded (TGF-β/CAF stromal signature)
@@ -12,7 +12,7 @@ Crossing both axes defines four phenotypes:
 | **Cold** | Cold_NonExcluded | Cold_Excluded |
 | **Hot** | Hot_NonExcluded | Hot_Excluded |
 
-The workflow includes phenotype classification, differential expression analysis, Hallmark GSEA, external validation in METABRIC, exploratory validation in I-SPY2, and generation of publication-ready figures and tables.
+The workflow includes phenotype classification, differential expression analysis, Hallmark GSEA, external validation in METABRIC, exploratory validation in I-SPY2, sensitivity analysis and generation of publication-ready figures and tables.
 
 ---
 
@@ -53,6 +53,7 @@ tnbc-immune-phenotype/
 Run the scripts in the following order:
 
 ```r
+source("R/00_setup.R")
 source("R/01_load_tcga.R")
 source("R/02_define_axes_phenotypes.R")
 source("R/03_dea_hot_excluded_vs_nonexcluded.R")
