@@ -1,0 +1,5 @@
+"Phenotype","n","n_pCR","pCR_rate"
+"Hot_NonExcluded",20,14,0.7
+"Hot_Excluded",14,5,0.357
+"Cold_NonExcluded",14,4,0.286
+"Cold_Excluded",23,6,0.261

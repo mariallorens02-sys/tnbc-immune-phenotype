@@ -1,0 +1,59 @@
+# ============================================================================
+# Configuration file
+# ============================================================================
+
+paths:
+  tcga_expr: "../tnbc-immune-phenotype/data/raw/TCGA.BRCA.sampleMap_HiSeqV2/HiSeqV2"
+  tcga_clinical: "../tnbc-immune-phenotype/data/raw/denseDataOnlyDownload.tsv"
+  metabric_expr: "../tnbc-immune-phenotype/data/raw/brca_metabric/data_mrna_illumina_microarray_zscores_ref_diploid_samples.txt"
+  metabric_clin: "../tnbc-immune-phenotype/data/raw/brca_metabric/brca_metabric_clinical_data.tsv"
+  ispy2_expr: "../tnbc-immune-phenotype/data/raw/GSE173839_ISPY2_AgilentGeneExp_durvaPlusCtr_FFPE_meanCol_geneLevel_n105.txt"
+  ispy2_meta: "../tnbc-immune-phenotype/data/raw/GSE173839_ISPY2_DurvalumabOlaparibArm_biomarkers.csv"
+
+# Gene signatures
+signatures:
+
+  # Tumor Inflammation Signature (Ayers et al., JCI 2017)
+  tis_ayers:
+    genes: [
+      TIGIT, CD27, CD274, PDCD1LG2, LAG3, NKG7, PSMB10, CMKLR1,
+      CD8A, IDO1, STAT1, CCL5, CXCL9, HLA-DRA, CXCL10,
+      HLA-E, HLA-DQA1, GZMK
+    ]
+
+  # Stromal / TGF-β signature (Mariathasan et al., Nature 2018)
+  stromal_exclusion:
+    genes: [
+      TGFB1, TGFB2, TGFB3, FAP, ACTA2,
+      COL1A1, COL11A1, PDGFRB, THBS2, FN1
+    ]
+
+# Genes removed from DEA to reduce circularity
+dea_exclusions:
+
+  tis_genes: [
+    TIGIT, CD27, CD274, PDCD1LG2, LAG3, NKG7, PSMB10, CMKLR1,
+    CD8A, IDO1, STAT1, CCL5, CXCL9, HLA-DRA, CXCL10,
+    HLA-E, HLA-DQA1, GZMK
+  ]
+
+  stromal_genes: [
+    TGFB1, TGFB2, TGFB3, FAP, ACTA2,
+    COL1A1, COL11A1, PDGFRB, THBS2, FN1
+  ]
+
+  extra: [
+    CD8B, CD3E, CD3G, CD3D,
+    GZMA, GZMB, PRF1, IFNG
+  ]
+
+# Phenotype colours
+colors:
+  hot_excluded: "#c0392b"
+  hot_non_excluded: "#27ae60"
+  cold_excluded: "#8e44ad"
+  cold_non_excluded: "#95a5a6"
+
+project:
+  seed: 42
+  dpi: 300
